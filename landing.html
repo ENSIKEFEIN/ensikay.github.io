@@ -339,149 +339,8 @@ footer {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 }
-    </style>
-</head>
-<body>
-    <!-- Header section with hamburger menu -->
-    <header>
-        <div class="container">
-            <h1>NCK</h1>
-            <nav>
-                <div class="burger">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
 
-    <!-- Hero section -->
-    <section id="home">
-        <div class="container">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Graphic Designer | Software Engineering Student | Animator | Music Producer</p>
-            <a href="#gallery" class="btn">View Gallery</a>
-        </div>
-    </section>
-
-    <!-- About Me section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="profile">
-                <img src="/Portfolio /1694685925576_1.jpg" alt="Your Name">
-                <div class="profile-info">
-                    <p>I am a passionate graphic designer and software engineering student...</p>
-                    <!-- Add more details about yourself -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery section -->
-    <section id="gallery">
-        <div class="container">
-            <h2>Gallery</h2>
-            <div class="gallery-grid">
-                <!-- Gallery items will be dynamically populated -->
-                <div class="gallery-item">
-                    <img src="/Portfolio /IMG-20230817-WA0002.jpg" alt="Gallery Item 1">
-                </div>
-                <div class="gallery-item">
-                    <img src="/Portfolio /20230728_080039.jpg" alt="Gallery Item 2">
-                </div>
-                <!-- Add more gallery items -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Services section -->
-    <section id="services">
-        <div class="container">
-            <h2>Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <i class="fas fa-palette"></i>
-                    <h3>Graphic Design</h3>
-                    <p>Professional graphic design services tailored to your needs.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-laptop-code"></i>
-                    <h3>Software Development</h3>
-                    <p>Custom software solutions to drive your business forward.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-film"></i>
-                    <h3>Animation</h3>
-                    <p>Creative and engaging animations for various applications.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-music"></i>
-                    <h3>Music Production</h3>
-                    <p>Original music compositions and beats to enhance your projects.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <form action="#" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer section -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 nck. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript for hamburger menu -->
-    <script>
-      // Select elements
-const burger = document.querySelector('.burger');
-const navLinks = document.querySelector('.nav-links');
-const navLinksList = document.querySelectorAll('.nav-links li');
-
-// Toggle Nav
-burger.addEventListener('click', () => {
-    // Toggle burger animation
-    burger.classList.toggle('toggle');
-
-    // Toggle nav
-    navLinks.classList.toggle('nav-active');
-
-    // Animate links
-    navLinksList.forEach((link, index) => {
-        if (link.style.animation) {
-            link.style.animation = '';
-        } else {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
-        }
-    });
-});
-    </script>
-</body>
-</html>
-
-<style>
-  /* Animation for nav links */
+/* Animation for nav links */
 @keyframes navLinkFade {
     from {
         opacity: 0;
@@ -522,4 +381,143 @@ burger.addEventListener('click', () => {
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px, -6px);
 }
-</style>
+    </style>
+</head>
+<body>
+    <!-- Header section with hamburger menu -->
+    <header><div class="container">
+        <h1>NCK</h1>
+        <nav>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero section -->
+<section id="home">
+    <div class="container">
+        <h2>Welcome to My Portfolio</h2>
+        <p>Graphic Designer | Software Engineering Student | Animator | Music Producer</p>
+        <a href="#gallery" class="btn">View Gallery</a>
+    </div>
+</section>
+
+<!-- About Me section -->
+<section id="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <div class="profile">
+            <img src="/Portfolio/1694685925576_1.jpg" alt="Your Name">
+            <div class="profile-info">
+                <p>I am a passionate graphic designer and software engineering student...</p>
+                <!-- Add more details about yourself -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery section -->
+<section id="gallery">
+    <div class="container">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <!-- Gallery items will be dynamically populated -->
+            <div class="gallery-item">
+                <img src="/Portfolio/IMG-20230817-WA0002.jpg" alt="Gallery Item 1">
+            </div>
+            <div class="gallery-item">
+                <img src="/Portfolio/20230728_080039.jpg" alt="Gallery Item 2">
+            </div>
+            <!-- Add more gallery items -->
+        </div>
+    </div>
+</section>
+
+<!-- Services section -->
+<section id="services">
+    <div class="container">
+        <h2>Services</h2>
+        <div class="services-grid">
+            <div class="service-item">
+                <i class="fas fa-palette"></i>
+                <h3>Graphic Design</h3>
+                <p>Professional graphic design services tailored to your needs.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Software Development</h3>
+                <p>Custom software solutions to drive your business forward.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-film"></i>
+                <h3>Animation</h3>
+                <p>Creative and engaging animations for various applications.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-music"></i>
+                <h3>Music Production</h3>
+                <p>Original music compositions and beats to enhance your projects.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact section -->
+<section id="contact">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <form action="#" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- Footer section -->
+<footer>
+    <div class="container">
+        <p>&copy; 2024 nck. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- JavaScript for hamburger menu -->
+<script>
+    // Select elements
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksList = document.querySelectorAll('.nav-links li');
+
+    // Toggle Nav
+    burger.addEventListener('click', () => {
+        // Toggle burger animation
+        burger.classList.toggle('toggle');
+
+        // Toggle nav
+        navLinks.classList.toggle('nav-active');
+
+        // Animate links
+        navLinksList.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
