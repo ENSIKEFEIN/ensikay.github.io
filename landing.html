@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <!-- External CSS libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Gm6FfJH45s5n2ffzXz6fS07cJKXC17+BhSh/EDp+c4wBXaG9a++s3ldA9Gf5gM7VLNhs0b4A1vohj6Q19dkF1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- External Font library (example) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Your custom stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-left: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #f39c12;
+}
+
+/* Hamburger menu styles */
+.burger {
+    display: block;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: transform 0.3s ease;
+}
+
+.nav-active .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.nav-active .line2 {
+    opacity: 0;
+}
+
+.nav-active .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Hero section styles */
+#home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f39c12;
+    color: #fff;
+}
+
+#home h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #343a40;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1e2124;
+}
+
+/* About Me section styles */
+#about {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 40px;
+}
+
+.profile-info {
+    max-width: 600px;
+    text-align: left;
+}
+
+/* Gallery section styles */
+#gallery {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+}
+
+/* Services section styles */
+#services {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    justify-content: center;
+}
+
+.service-item {
+    text-align: center;
+}
+
+.service-item i {
+    font-size: 3rem;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: 1rem;
+}
+
+/* Contact section styles */
+#contact {
+    padding: 100px 0;
+    text-align: center;
+    background-color: #f8f9fa;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    display: inline-block;
+    background-color: #343a40;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1e2124;
+}
+
+/* Footer section styles */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: #343a40;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .burger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .nav-active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .nav-active .line2 {
+        opacity: 0;
+    }
+
+    .nav-active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header section with hamburger menu -->
+    <header>
+        <div class="container">
+            <h1>NCK</h1>
+            <nav>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section id="home">
+        <div class="container">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Graphic Designer | Software Engineering Student | Animator | Music Producer</p>
+            <a href="#gallery" class="btn">View Gallery</a>
+        </div>
+    </section>
+
+    <!-- About Me section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="profile">
+                <img src="/Portfolio /1694685925576_1.jpg" alt="Your Name">
+                <div class="profile-info">
+                    <p>I am a passionate graphic designer and software engineering student...</p>
+                    <!-- Add more details about yourself -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section id="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <!-- Gallery items will be dynamically populated -->
+                <div class="gallery-item">
+                    <img src="/Portfolio /IMG-20230817-WA0002.jpg" alt="Gallery Item 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="/Portfolio /20230728_080039.jpg" alt="Gallery Item 2">
+                </div>
+                <!-- Add more gallery items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services section -->
+    <section id="services">
+        <div class="container">
+            <h2>Services</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-palette"></i>
+                    <h3>Graphic Design</h3>
+                    <p>Professional graphic design services tailored to your needs.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Software Development</h3>
+                    <p>Custom software solutions to drive your business forward.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-film"></i>
+                    <h3>Animation</h3>
+                    <p>Creative and engaging animations for various applications.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-music"></i>
+                    <h3>Music Production</h3>
+                    <p>Original music compositions and beats to enhance your projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 nck. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for hamburger menu -->
+    <script>
+      // Select elements
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
+const navLinksList = document.querySelectorAll('.nav-links li');
+
+// Toggle Nav
+burger.addEventListener('click', () => {
+    // Toggle burger animation
+    burger.classList.toggle('toggle');
+
+    // Toggle nav
+    navLinks.classList.toggle('nav-active');
+
+    // Animate links
+    navLinksList.forEach((link, index) => {
+        if (link.style.animation) {
+            link.style.animation = '';
+        } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+        }
+    });
+});
+    </script>
+</body>
+</html>
+
+<style>
+  /* Animation for nav links */
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Active styles for nav links */
+.nav-active {
+    transform: translateX(0%);
+}
+
+/* Hamburger menu animation */
+.burger .line1 {
+    transform-origin: top left;
+}
+
+.burger .line2 {
+    transform-origin: top right;
+}
+
+.burger .line3 {
+    transform-origin: bottom left;
+}
+
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.toggle .line2 {
+    opacity: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+</style>
